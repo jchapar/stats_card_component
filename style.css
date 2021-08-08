@@ -6,8 +6,8 @@ font-family: 'Lexend Deca', sans-serif;
 */
 
 :root {
-  --very-dark-blue: hsl(233, 47%, 7%);
-  --Dark-desaturated-blue: hsl(244, 38%, 16%);
+  --main-bg: hsl(233, 47%, 7%);
+  --card-bg: hsl(244, 38%, 16%);
   --violet-color: hsl(277, 64%, 61%);
   --white-color: hsl(0, 0%, 100%);
   --transparent-white: hsla(0, 0%, 100%, 0.75);
@@ -25,179 +25,78 @@ html {
 }
 
 body {
+  background: var(--main-bg);
   font-family: "Lexend Deca", sans-serif;
-  background: var(--very-dark-blue);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
 .container {
-  margin: 4rem 2rem;
+  max-width: 375px;
+  margin: 0 auto;
 }
 
 .card {
-  background: var(--Dark-desaturated-blue);
-  max-width: 1100px;
-  margin: 0 5rem;
-  border-radius: 0.5rem;
+  background-color: var(--card-bg);
+  margin: 3rem 0;
+  border-radius: 10px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+.image-wrapper {
+  background-color: var(--violet-color);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
-.card-content {
-  padding: 5rem 3rem;
-  max-width: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-left: 8rem;
+.image-wrapper img {
+  mix-blend-mode: multiply;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
 }
 
-.card-content h1 {
-  color: #fff;
-  font-size: 3rem;
-  padding-top: 4rem;
+.text-wrapper {
+  padding: 2rem 3rem;
   margin-bottom: 2rem;
 }
 
-.card-content h1 span {
+.text-wrapper h1 {
+  font-size: 3.5rem;
+  color: var(--white-color);
+  text-align: center;
+  font-weight: lighter;
+  margin-bottom: 2rem;
+}
+
+.text-wrapper h1 span {
   color: var(--violet-color);
 }
 
-.card-content p {
+.text-wrapper p {
+  color: var(--transparent-white);
   font-size: 1.6rem;
-  color: var(--slightly-transparent-white);
-  margin-bottom: 2rem;
+  text-align: center;
   line-height: 1.5;
+  font-weight: lighter;
+  letter-spacing: 2px;
 }
 
-.stats {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 4rem 0;
+.stats-wrapper {
+  padding: 2rem 3rem;
 }
 
-.stat {
-  margin-right: 7rem;
-}
-
-.stats .stat-number {
-  color: #fff;
-  font-size: 2.4rem;
+.stats-wrapper .stat {
   text-align: center;
+  margin-bottom: 3rem;
 }
 
-.stats .stat-title {
+.stats-wrapper .stat h2 {
+  font-size: 3.2rem;
+  color: var(--white-color);
+  font-weight: lighter;
+}
+
+.stats-wrapper .stat p {
+  color: var(--slightly-transparent-white);
   text-transform: uppercase;
-  font-size: 1rem;
-  text-align: center;
-}
-
-.card-img img {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-top-right-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-}
-
-.card-img {
-  position: relative;
-  border-top-right-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-}
-
-.card-img:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: var(--violet-color);
-  opacity: 0.6;
-  border-top-right-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-}
-
-@media (max-width: 686px) {
-  .container {
-    padding: 5rem;
-  }
-  .grid {
-    grid-template-areas:
-      "cardImg cardImg"
-      "cardContent cardContent";
-  }
-
-  .card-content {
-    grid-area: cardContent;
-    text-align: center;
-    max-width: 65%;
-    padding: 0;
-    margin: 0 auto;
-  }
-
-  .card-content h1 {
-    color: #fff;
-    font-size: 3.5rem;
-    padding-top: 1rem;
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-
-  .stats {
-    flex-direction: column;
-  }
-
-  .stat {
-    margin-right: 0;
-  }
-
-  .stats .stat-number {
-    color: #fff;
-    font-size: 2.4rem;
-    text-align: center;
-  }
-
-  .stats .stat-title {
-    text-transform: uppercase;
-    font-size: 1.8rem;
-    text-align: center;
-  }
-
-  .card-img {
-    grid-area: cardImg;
-    height: 90%;
-    object-fit: contain;
-  }
-
-  .card-img img {
-    object-fit: cover;
-  }
-
-  .card-img img {
-    border-top-right-radius: 0.5rem;
-    border-top-left-radius: 0.5rem;
-  }
-
-  .card-img {
-    border-top-right-radius: 0.5rem;
-    border-top-left-radius: 0.5rem;
-  }
-
-  .card-img:before {
-    border-top-right-radius: 0.5rem;
-    border-top-left-radius: 0.5rem;
-  }
+  font-size: 1.2rem;
+  letter-spacing: 1px;
 }
