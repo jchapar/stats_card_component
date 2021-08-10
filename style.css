@@ -32,6 +32,7 @@ body {
 .container {
   max-width: 375px;
   margin: 0 auto;
+  padding: 4rem;
 }
 
 .card {
@@ -44,6 +45,7 @@ body {
   background-color: var(--violet-color);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  grid-area: img;
 }
 
 .image-wrapper img {
@@ -56,6 +58,7 @@ body {
 .text-wrapper {
   padding: 2rem 3rem;
   margin-bottom: 2rem;
+  grid-area: text;
 }
 
 .text-wrapper h1 {
@@ -81,6 +84,7 @@ body {
 
 .stats-wrapper {
   padding: 2rem 3rem;
+  grid-area: stats;
 }
 
 .stats-wrapper .stat {
@@ -99,4 +103,70 @@ body {
   text-transform: uppercase;
   font-size: 1.2rem;
   letter-spacing: 1px;
+}
+
+@media (min-width: 1000px) {
+  .container {
+    max-width: 1440px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    display: grid;
+    grid-template-areas:
+      "text img img"
+      "stats img img";
+  }
+
+  .image-wrapper {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 10px;
+  }
+
+  .text-wrapper {
+    padding: 3rem 8rem;
+    margin: 2rem auto;
+  }
+
+  .text-wrapper h1 {
+    font-size: 4.5rem;
+    color: var(--white-color);
+    text-align: left;
+    font-weight: lighter;
+    margin-bottom: 1rem;
+  }
+
+  .text-wrapper p {
+    text-align: left;
+    max-width: 90%;
+  }
+
+  .stats-wrapper {
+    padding: 0;
+    margin: 0 auto;
+    grid-area: stats;
+    /* max-width: 70%; */
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+  }
+
+  .stats-wrapper .stat {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .stats-wrapper .stat h2 {
+    font-size: 3.2rem;
+    font-weight: lighter;
+  }
+
+  .stats-wrapper .stat p {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
 }
