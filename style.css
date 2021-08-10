@@ -56,8 +56,8 @@ body {
 }
 
 .text-wrapper {
-  padding: 2rem 3rem;
-  margin-bottom: 2rem;
+  padding: 1rem 3rem;
+  margin-bottom: 1rem;
   grid-area: text;
 }
 
@@ -66,7 +66,7 @@ body {
   color: var(--white-color);
   text-align: center;
   font-weight: lighter;
-  margin-bottom: 2rem;
+  padding-bottom: 3rem;
 }
 
 .text-wrapper h1 span {
@@ -105,7 +105,7 @@ body {
   letter-spacing: 1px;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1100px) {
   .container {
     max-width: 1440px;
     height: 100vh;
@@ -146,27 +146,19 @@ body {
   }
 
   .stats-wrapper {
-    padding: 0;
-    margin: 0 auto;
+    padding-left: 8rem;
     grid-area: stats;
-    /* max-width: 70%; */
+    width: 80%;
     display: flex;
-    align-items: flex-start;
-    justify-content: start;
+    justify-content: space-between;
   }
 
   .stats-wrapper .stat {
-    text-align: center;
-    margin-bottom: 3rem;
+    padding-right: 1rem;
   }
 
-  .stats-wrapper .stat h2 {
-    font-size: 3.2rem;
-    font-weight: lighter;
-  }
-
+  .stats-wrapper .stat h2,
   .stats-wrapper .stat p {
-    font-size: 1.2rem;
-    letter-spacing: 1px;
+    text-align: left;
   }
 }
